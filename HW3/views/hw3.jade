@@ -1,5 +1,85 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	- var fname = data['wx_icon'].toString()
+	h1
+		| #{title}
+		img(src="./images/" + fname)
+	div
+		table(style="border:1px solid")
+			tbody
+				tr
+					td weather station latitude
+					td #{data['lat']}
+				tr
+					td weather station longitude
+					td #{data['lon']}
+				tr
+					td weather station altitude (meters)
+					td #{data['alt_m']}
+				tr
+					td weather station altitude (feet)
+					td #{data['alt_f']}
+				tr
+					td weather description
+					td #{data['wx_desc']}
+				tr
+					td weather code
+					td #{data['wx_code']}
+				tr
+					td weather icon file name
+					td #{data['wx_icon']}
+				tr
+					td temperature (Celcius)
+					td #{data['temp_c']}
+				tr
+					td temperature (Fahrenheit)
+					td #{data['temp_f']}
+				tr
+					td feel like temperature (Celcius)
+					td #{data['feelslike_c']}
+				tr
+					td feel like temperature (Fahrenheit)
+					td #{data['feelslike_f']}
+				tr
+					td maximum mean wind speed (miles per hour)
+					td #{data['windspd_mph']}
+				tr
+					td maximum mean wind speed (kilometers per hour)
+					td #{data['windspd_kmh']}
+				tr
+					td maximum mean wind speed (knots)
+					td #{data['windspd_kts']}
+				tr
+					td maximum mean wind speed (metres per second)
+					td #{data['windspd_ms']}
+				tr
+					td direction wind is coming from (degrees (0-360))
+					td #{data['winddir_deg']}
+				tr
+					td direction wind is coming from (16 Point)
+					td #{data['winddir_compass']}
+				tr
+					td amount of total cloud
+					td #{data['cloudtotal_pct']}
+				tr
+					td humidity level
+					td #{data['humid_pct']}
+				tr
+					td dewpoint (Celcius)
+					td #{data['dewpoint_c']}
+				tr
+					td dewpoint (Fahreheit)
+					td #{data['dewpoint_f']}
+				tr
+					td visibility (kilometers)
+					td #{data['vis_km']}
+				tr
+					td visibility (miles)
+					td #{data['vis_mi']}
+				tr
+					td sea level pressure (millibars)
+					td #{data['slp_mb']}
+				tr
+					td sea level pressure (inches)
+					td #{data['slp_in']}
